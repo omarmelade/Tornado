@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Tornado</string>
+    <string name="random_dice">TEST</string>
 </resources>
