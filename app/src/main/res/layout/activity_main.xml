@@ -45,17 +45,17 @@
                 android:layout_height="181dp">
 
                 <ImageButton
-                    android:id="@+id/imageButton2"
+                    android:id="@+id/game_dice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/imageButton"
+                    app:layout_constraintEnd_toStartOf="@+id/game_joke"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:srcCompat="@tools:sample/avatars" />
 
                 <ImageButton
-                    android:id="@+id/imageButton"
+                    android:id="@+id/game_joke"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="36dp"
@@ -80,17 +80,17 @@
                 android:layout_height="181dp">
 
                 <ImageButton
-                    android:id="@+id/imageButton2"
+                    android:id="@+id/game_random"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/imageButton"
+                    app:layout_constraintEnd_toStartOf="@+id/game_flip_coin"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:srcCompat="@tools:sample/avatars" />
 
                 <ImageButton
-                    android:id="@+id/imageButton"
+                    android:id="@+id/game_flip_coin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="36dp"
