@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imagepiece"
         android:layout_width="364dp"
         android:layout_height="359dp"
         android:src="@drawable/pile"
@@ -32,13 +32,15 @@
         android:id="@+id/flip_answer"
         android:layout_width="276dp"
         android:layout_height="74dp"
+        android:layout_marginBottom="172dp"
+        android:gravity="center_horizontal"
         android:text="TextView"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3"
         app:layout_constraintVertical_bias="0.273"
-        android:gravity="center_horizontal" />
+        tools:ignore="UnknownId" />
 </androidx.constraintlayout.widget.ConstraintLayout>
