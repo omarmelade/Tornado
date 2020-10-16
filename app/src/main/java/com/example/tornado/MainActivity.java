@@ -22,6 +22,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, RandomDiceActivity.class));
             }
         });
+        //ImageButton open_coinflip = (ImageButton) findViewById(R.id.game_coinflip);
+        //open_dice.setOnClickListener(new View.OnClickListener() {
+         //   @Override
+        //    public void onClick(View v) {
+        //        startActivity(new Intent(MainActivity.this, CoinFlipActivity.class));
+        //    }
+        //});
+
     }
 
 }
