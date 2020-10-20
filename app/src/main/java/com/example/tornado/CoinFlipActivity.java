@@ -30,6 +30,7 @@ public class CoinFlipActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coin_flip);
+
         coin = (ImageView) findViewById(R.id.imagepiece);
         btn = (Button) findViewById(R.id.buttonFlip);
         btn.setOnClickListener(new View.OnClickListener() {
@@ -47,15 +48,20 @@ public class CoinFlipActivity extends AppCompatActivity {
         fadeOut.setInterpolator(new AccelerateInterpolator());
         fadeOut.setDuration(1000);
         fadeOut.setFillAfter(true);
+        final TextView flip_res = (TextView) findViewById(R.id.flip_answer);
         fadeOut.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
+                flip_res.setText(" ");
 
             }
 
             @Override
             public void onAnimationEnd(Animation animation) {
-                coin.setImageResource(RANDOM.nextFloat() > 0.5f ? R.drawable.pile : R.drawable.face);
+                Random randomno = new Random();
+                float alea = randomno.nextFloat();
+                flip_res.setText(alea > 0.5f ? "C'est Pile !" : "C'est Face !" );
+                coin.setImageResource(alea > 0.5f ? R.drawable.pile : R.drawable.face);
 
                 Animation fadeIn = new AlphaAnimation(0, 1);
                 fadeIn.setInterpolator(new DecelerateInterpolator());
