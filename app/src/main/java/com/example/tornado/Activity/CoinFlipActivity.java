@@ -1,4 +1,4 @@
-package com.example.tornado;
+package com.example.tornado.Activity;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;

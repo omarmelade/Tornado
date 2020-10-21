@@ -3,4 +3,6 @@
     <string name="random_dice">LANCER</string>
     <string name="new_field_btn">NOUVEAU</string>
     <string name="draw_lot_btn">TIRAGE</string>
+    <string name="name_draw_list">Nom</string>
+    <string name="write_name">Ecrivez votre nom</string>
 </resources>

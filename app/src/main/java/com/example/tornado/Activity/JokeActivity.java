@@ -1,4 +1,4 @@
-package com.example.tornado;
+package com.example.tornado.Activity;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -8,6 +8,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.tornado.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;

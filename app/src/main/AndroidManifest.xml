@@ -9,11 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ScrollActivity" />
-        <activity android:name=".RandomDiceActivity"></activity>
-        <activity android:name=".CoinFlipActivity"></activity>
-        <activity android:name=".JokeActivity"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activity.ScrollActivity" />
+        <activity android:name=".Activity.RandomDiceActivity" />
+        <activity android:name=".Activity.CoinFlipActivity" />
+        <activity android:name=".Activity.JokeActivity"/>
+
+        <activity android:name=".Activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

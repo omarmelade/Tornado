@@ -1,4 +1,4 @@
-package com.example.tornado;
+package com.example.tornado.Activity;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.tornado.R;
 
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
