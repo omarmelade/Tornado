@@ -30,6 +30,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.game_jokes).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, JokeActivity.class));
+            }
+        });
+
     };
 
 }

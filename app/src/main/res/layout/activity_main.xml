@@ -65,13 +65,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="@color/colorAccent"
                 android:scaleType="centerInside"
                 app:srcCompat="@drawable/dice" />
 
             <ImageButton
-                android:id="@+id/jokes"
+                android:id="@+id/game_jokes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorAccent"
                 android:layout_weight="1"
                 android:scaleType="centerInside"
                 app:srcCompat="@drawable/buffoon" />
@@ -89,6 +91,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="@color/colorAccent"
                 android:scaleType="centerInside"
                 app:srcCompat="@drawable/random" />
 
@@ -96,6 +99,7 @@
                 android:id="@+id/game_coinflip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorAccent"
                 android:layout_weight="1"
                 android:scaleType="centerInside"
                 app:srcCompat="@drawable/coinflip2" />

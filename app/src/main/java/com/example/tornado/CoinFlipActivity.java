@@ -46,7 +46,7 @@ public class CoinFlipActivity extends AppCompatActivity {
     private void flipCoin() {
         Animation fadeOut = new AlphaAnimation(1, 0);
         fadeOut.setInterpolator(new AccelerateInterpolator());
-        fadeOut.setDuration(1000);
+        fadeOut.setDuration(2800);
         fadeOut.setFillAfter(true);
         final TextView flip_res = (TextView) findViewById(R.id.flip_answer);
         fadeOut.setAnimationListener(new Animation.AnimationListener() {
