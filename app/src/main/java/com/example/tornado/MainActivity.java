@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-    };
         findViewById(R.id.game_random).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
