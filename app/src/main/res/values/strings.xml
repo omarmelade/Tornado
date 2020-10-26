@@ -11,4 +11,5 @@
     <string name="game_jokes_desc">jokes selector</string>
     <string name="game_dice_desc">two dices</string>
     <string name="logo_desc">a tornado</string>
+    <string name="name_field">Name</string>
 </resources>
