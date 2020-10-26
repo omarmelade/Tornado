@@ -5,4 +5,10 @@
     <string name="draw_lot_btn">TIRAGE</string>
     <string name="name_draw_list">Nom</string>
     <string name="write_name">Ecrivez votre nom</string>
+    <string name="splash_screen">splash screen of the app.</string>
+    <string name="game_rand_desc">two arrows crossing</string>
+    <string name="game_coinflip_desc">a coin is flipin\'</string>
+    <string name="game_jokes_desc">jokes selector</string>
+    <string name="game_dice_desc">two dices</string>
+    <string name="logo_desc">a tornado</string>
 </resources>

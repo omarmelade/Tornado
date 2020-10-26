@@ -1,26 +1,20 @@
 package com.example.tornado.Activity;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.tornado.R;
 
 import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
-import java.util.stream.IntStream;
 
 public class CoinFlipActivity extends AppCompatActivity {
     public static final Random RANDOM = new Random();
@@ -39,7 +33,6 @@ public class CoinFlipActivity extends AppCompatActivity {
                 flipCoin();
             }
         });
-
 
     }
 

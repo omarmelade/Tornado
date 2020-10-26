@@ -49,6 +49,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.064"
+                    android:contentDescription="@string/logo_desc"
                     app:srcCompat="@mipmap/ic_launcher_foreground" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -57,6 +58,11 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginStart="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginRight="25dp"
             android:layout_weight="1"
             android:orientation="horizontal">
 
@@ -66,23 +72,32 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="@color/colorAccent"
+                android:contentDescription="@string/game_dice_desc"
                 android:scaleType="centerInside"
-                app:srcCompat="@drawable/dice" />
+                app:srcCompat="@drawable/dice"
+                tools:targetApi="lollipop"/>
 
             <ImageButton
                 android:id="@+id/game_jokes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorAccent"
                 android:layout_weight="1"
+                android:backgroundTint="@color/colorAccent"
+                android:contentDescription="@string/game_jokes_desc"
                 android:scaleType="centerInside"
-                app:srcCompat="@drawable/buffoon" />
+                app:srcCompat="@drawable/buffoon"
+                tools:targetApi="lollipop"/>
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginStart="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="25dp"
             android:layout_weight="1"
             android:orientation="horizontal">
 
@@ -92,17 +107,21 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="@color/colorAccent"
+                android:contentDescription="@string/game_rand_desc"
                 android:scaleType="centerInside"
-                app:srcCompat="@drawable/random" />
+                app:srcCompat="@drawable/random"
+                tools:targetApi="lollipop" />
 
             <ImageButton
                 android:id="@+id/game_coinflip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorAccent"
                 android:layout_weight="1"
+                android:backgroundTint="@color/colorAccent"
+                android:contentDescription="@string/game_coinflip_desc"
                 android:scaleType="centerInside"
-                app:srcCompat="@drawable/coinflip2" />
+                app:srcCompat="@drawable/coinflip2"
+                tools:targetApi="lollipop"/>
 
         </LinearLayout>
     </LinearLayout>

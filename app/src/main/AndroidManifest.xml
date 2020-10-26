@@ -9,12 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".Activity.ScrollActivity" />
         <activity android:name=".Activity.RandomDiceActivity" />
         <activity android:name=".Activity.CoinFlipActivity" />
-        <activity android:name=".Activity.JokeActivity"/>
+        <activity android:name=".Activity.JokeActivity" />
 
-        <activity android:name=".Activity.MainActivity">
+        <activity android:name=".Activity.SplashActivity"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,6 +24,7 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".Activity.MainActivity" />
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
