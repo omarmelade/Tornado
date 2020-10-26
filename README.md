@@ -15,14 +15,18 @@ in **build.gradle** (Project)
     }
 }
 ```
-2. And add : \
+2. And add :
 ```
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'com.github.ViksaaSkool:AwesomeSplash:v1.0.0'
 ```
 in **build.gradle** (Modules)
-
+```
+dependencies {
+    ....
+}
+```
 ## Run
 
 You are now ready to test some of the functionnality in our app
