@@ -32,5 +32,6 @@ dependencies {
 You are now ready to test some of the functionnality in our app
 
 ___
+>Little app with random functionnality, like tornado comportments. 
 
 Created by @ChibreDeTyrex & @omarmelade
