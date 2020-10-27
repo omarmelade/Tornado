@@ -7,9 +7,9 @@
     tools:context=".Activity.RandomDiceActivity">
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/imageFace"
+        android:layout_width="417dp"
+        android:layout_height="508dp"
         android:src="@drawable/dice"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,11 +20,13 @@
 
     <Button
         android:id="@+id/randomize_dice"
-        android:layout_width="140dp"
-        android:layout_height="50dp"
+        android:layout_width="169dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="48dp"
         android:backgroundTint="@color/colorPrimary"
         android:text="@string/random_dice"
         android:textColor="#FF9800"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -36,6 +38,7 @@
         android:id="@+id/dice_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
         android:text="Prêt ?"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         app:layout_constraintBottom_toTopOf="@+id/randomize_dice"

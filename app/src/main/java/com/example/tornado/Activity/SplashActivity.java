@@ -1,6 +1,7 @@
 package com.example.tornado.Activity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.ImageView;
@@ -14,6 +15,7 @@ public class SplashActivity extends AppCompatActivity {
 
     ImageView iv_logo;
     TextView tv_logo;
+    MediaPlayer mySong;
 
     private Handler mHandler;
     private Runnable mRunnable;
@@ -22,19 +24,33 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-
-
-        mRunnable = new Runnable() {
-            @Override
+        mySong = MediaPlayer.create(this, R.raw.wind1);
+        mySong.start();
+        Thread timer = new Thread() {
             public void run() {
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                try {
+                    sleep(3000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+
+                }
+
+                mySong.pause();
+
             }
         };
+            mRunnable = new Runnable() {
+                    @Override
+                    public void run() {
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    }
+                };
 
-        mHandler = new Handler();
-        mHandler.postDelayed(mRunnable, 1000);
+            mHandler = new Handler();
+            mHandler.postDelayed(mRunnable, 2500);
+
+
     }
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -42,3 +58,4 @@ public class SplashActivity extends AppCompatActivity {
             mHandler.removeCallbacks(mRunnable);
     }
 }
+

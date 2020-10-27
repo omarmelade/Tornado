@@ -1,5 +1,6 @@
 package com.example.tornado.Activity;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
@@ -20,6 +21,7 @@ public class CoinFlipActivity extends AppCompatActivity {
     public static final Random RANDOM = new Random();
     private ImageView coin;
     private Button btn;
+    MediaPlayer mySong;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,9 +29,29 @@ public class CoinFlipActivity extends AppCompatActivity {
 
         coin = (ImageView) findViewById(R.id.imagepiece);
         btn = (Button) findViewById(R.id.buttonFlip);
+        mySong = MediaPlayer.create(this, R.raw.coin2);
+        // tentative d'augmentation du volume mais ça a pas l'air de marcher de ouf
+        float test = 1;
+        mySong.setVolume(test, test);
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                mySong.start();
+                Thread timer = new Thread() {
+                    public void run() {
+                        try {
+                            sleep(3000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+
+                        }
+
+                        mySong.pause();
+
+                    }
+                };
                 flipCoin();
             }
         });
@@ -54,7 +76,7 @@ public class CoinFlipActivity extends AppCompatActivity {
                 Random randomno = new Random();
                 float alea = randomno.nextFloat();
                 flip_res.setText(alea > 0.5f ? "C'est Pile !" : "C'est Face !" );
-                coin.setImageResource(alea > 0.5f ? R.drawable.pile : R.drawable.face);
+                coin.setImageResource(alea > 0.5f ? R.drawable.tail : R.drawable.head);
 
                 Animation fadeIn = new AlphaAnimation(0, 1);
                 fadeIn.setInterpolator(new DecelerateInterpolator());

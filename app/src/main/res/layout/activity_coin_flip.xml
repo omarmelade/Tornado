@@ -8,9 +8,9 @@
 
     <ImageView
         android:id="@+id/imagepiece"
-        android:layout_width="364dp"
-        android:layout_height="359dp"
-        android:src="@drawable/pile"
+        android:layout_width="408dp"
+        android:layout_height="391dp"
+        android:src="@drawable/head"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,12 +19,13 @@
 
     <Button
         android:id="@+id/buttonFlip"
-        android:layout_width="122dp"
-        android:layout_height="56dp"
+        android:layout_width="169dp"
+        android:layout_height="64dp"
         android:layout_marginBottom="60dp"
         android:backgroundTint="@color/colorPrimary"
         android:text="LANCER"
         android:textColor="#FF9800"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
