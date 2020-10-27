@@ -37,7 +37,8 @@ public class CoinFlipActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                // on desactive le btn juste après le clic
+                btn.setEnabled(false);
                 mySong.start();
                 Thread timer = new Thread() {
                     public void run() {
@@ -49,10 +50,10 @@ public class CoinFlipActivity extends AppCompatActivity {
                         }
 
                         mySong.pause();
-
                     }
                 };
                 flipCoin();
+
             }
         });
 
@@ -84,6 +85,8 @@ public class CoinFlipActivity extends AppCompatActivity {
                 fadeIn.setFillAfter(true);
 
                 coin.startAnimation(fadeIn);
+                // reactive le btn a la fin de l'animation
+                btn.setEnabled(true);
             }
 
             @Override
@@ -93,6 +96,7 @@ public class CoinFlipActivity extends AppCompatActivity {
         });
 
         coin.startAnimation(fadeOut);
+
     }
 
 }
