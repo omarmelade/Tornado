@@ -19,7 +19,7 @@ in **build.gradle** (Project)
 ```
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'com.google.android.material:material:1.2.1'
-    implementation 'com.github.ViksaaSkool:AwesomeSplash:v1.0.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
 ```
 in **build.gradle** (Modules)
 ```
