@@ -57,5 +57,11 @@ public class SplashActivity extends AppCompatActivity {
         if(mHandler != null && mRunnable != null)
             mHandler.removeCallbacks(mRunnable);
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        this.setVisible(false);
+    }
 }
 

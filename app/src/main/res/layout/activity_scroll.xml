@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_content"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:visibility="visible">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvNames"
@@ -13,36 +14,54 @@
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab1"
+        android:id="@+id/fabEdit"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_gravity="bottom|end"
-        android:layout_margin="10dp"
+        android:layout_margin="15dp"
         android:contentDescription="@string/new_field_btn"
         android:nestedScrollingEnabled="true"
-        android:src="@drawable/baseline_play_arrow_white_18"
+        android:src="@drawable/baseline_edit_white_36"
+        app:fabCustomSize="45dp"
         tools:ignore="UnusedAttribute" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab2"
+        android:id="@+id/fabSort"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_gravity="bottom|end"
-        android:layout_margin="10dp"
+        android:layout_margin="15dp"
         android:contentDescription="@string/new_field_btn"
         android:nestedScrollingEnabled="true"
-        android:src="@drawable/baseline_play_arrow_white_18"
+        android:src="@drawable/baseline_play_arrow_white_24"
+        app:backgroundTint="@color/colorPrimaryDark"
+        app:fabCustomSize="45dp"
         tools:ignore="UnusedAttribute" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab3"
+        android:id="@+id/fabSave"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_gravity="bottom|end"
-        android:layout_margin="10dp"
+        android:layout_margin="15dp"
         android:contentDescription="@string/new_field_btn"
         android:nestedScrollingEnabled="true"
-        android:src="@drawable/baseline_play_arrow_white_18"
+        android:src="@drawable/baseline_save_white_36"
+        app:backgroundTint="@color/colorAccent"
+        app:fabCustomSize="45dp"
+        tools:ignore="UnusedAttribute" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabDelete"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="15dp"
+        android:contentDescription="@string/new_field_btn"
+        android:nestedScrollingEnabled="true"
+        android:src="@drawable/baseline_delete_forever_white_36"
+        app:backgroundTint="#DF3526"
+        app:fabCustomSize="45dp"
         tools:ignore="UnusedAttribute" />
 
 
@@ -51,7 +70,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_margin="5dp"
+        android:layout_margin="10dp"
         android:backgroundTint="@color/colorAccent"
         android:contentDescription="@string/new_field_btn"
         android:nestedScrollingEnabled="true"
