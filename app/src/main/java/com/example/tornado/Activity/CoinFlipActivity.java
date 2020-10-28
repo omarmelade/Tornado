@@ -38,6 +38,7 @@ public class CoinFlipActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // on desactive le btn juste après le clic
+
                 btn.setEnabled(false);
                 mySong.start();
                 Thread timer = new Thread() {
