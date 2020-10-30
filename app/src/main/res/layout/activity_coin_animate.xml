@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.CoinAnimateActivity">
+
+    <ImageView
+        android:id="@+id/back_btn"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/back_button"
+        android:elevation="5dp"
+        android:src="@drawable/ic_arrow_left"
+        android:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/iv_coin"
+        android:layout_width="300dp"
+        android:layout_height="349dp"
+        android:layout_centerInParent="true"
+        android:contentDescription="@string/red_circle_desc"
+        app:srcCompat="@drawable/ic_heads" />
+
+    <TextView
+        android:id="@+id/tv_coin"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:fontFamily="@font/roboto"
+        android:gravity="center"
+        android:textSize="45sp"
+        android:text=""
+        android:background="@drawable/myrect"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="60dp"
+        android:layout_marginHorizontal="50dp"
+        android:elevation="5dp" />
+
+
+</RelativeLayout>

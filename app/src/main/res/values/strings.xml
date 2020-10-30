@@ -12,4 +12,6 @@
     <string name="game_dice_desc">two dices</string>
     <string name="logo_desc">a tornado</string>
     <string name="name_field">Name</string>
+    <string name="red_circle_desc">red circle represent heads</string>
+    <string name="back_button">back button</string>
 </resources>

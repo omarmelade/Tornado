@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,11 +27,13 @@ import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class ScrollActivity extends AppCompatActivity {
 
     ArrayList<NameTag> nameTags;
     FloatingActionButton fab, fabEdit, fabSort, fabSave, fabDelete;
+    ImageView back_btn;
     boolean isFABOpen = false;
     boolean isRotate = false;
 
@@ -43,7 +46,6 @@ public class ScrollActivity extends AppCompatActivity {
         loadData();
 
             fab = findViewById(R.id.fab_main);
-
             // on defini les petits bouttons du FAB
             fabEdit = findViewById(R.id.fabEdit);
             fabSort = findViewById(R.id.fabSort);
@@ -88,7 +90,7 @@ public class ScrollActivity extends AppCompatActivity {
             DrawSortAdapter adapter = new DrawSortAdapter(nameTags);
             recyclerView.setAdapter(adapter);
             // on cree un layout manager pour gerer les layouts
-            recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+            recyclerView.setLayoutManager(new GridLayoutManager(this, 1));
 
 
             fabDelete.setOnClickListener(new View.OnClickListener() {
@@ -98,13 +100,23 @@ public class ScrollActivity extends AppCompatActivity {
                 }
             });
 
-            fabEdit.setOnClickListener(new View.OnClickListener() {
+        fabEdit.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     askingAlert();
                 }
             });
+
+        back_btn = findViewById(R.id.back_btn2);
+        back_btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onBackPressed();
+                }
+            });
+
     }
+
 
     private void deleteData(RecyclerView rv) {
         nameTags = new ArrayList<>();
@@ -112,7 +124,7 @@ public class ScrollActivity extends AppCompatActivity {
         saveData();
     }
 
-
+    
     // methode qui sauvegarde au moment ou l'on appuie sur save
     private void saveData() {
         SharedPreferences sharedPreferences = getSharedPreferences("shared preferences", MODE_PRIVATE);
@@ -136,16 +148,25 @@ public class ScrollActivity extends AppCompatActivity {
         }
     }
 
+    private String winner(){
+        Random r = new Random();
+        int nb = r.nextInt(nameTags.size());
+        NameTag n = nameTags.get(nb);
+        return  n.getmName();
+    }
+
     private void startRevealActivity(View v) {
+
         //calculates the center of the View v you are passing
         int revealX = (int) (v.getX() + v.getWidth() / 2);
         int revealY = (int) (v.getY() + v.getHeight() / 2);
 
         //create an intent, that launches the second activity and pass the x and y coordinates
         Intent intent = new Intent(this, DisplayResultActivity.class);
+        intent.putExtra("winner", winner());
         intent.putExtra(RevealAnimation.EXTRA_CIRCULAR_REVEAL_X, revealX);
         intent.putExtra(RevealAnimation.EXTRA_CIRCULAR_REVEAL_Y, revealY);
-
+        System.out.println(winner());
         //just start the activity as an shared transition, but set the options bundle to null
         ActivityCompat.startActivity(this, intent, null);
 

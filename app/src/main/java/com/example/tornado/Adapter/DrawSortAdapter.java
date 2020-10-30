@@ -44,6 +44,7 @@ public class DrawSortAdapter extends
         View nameView = inflater.inflate(R.layout.item_name, parent, false);
 
         ViewHolder viewHolder = new ViewHolder(nameView);
+
         return viewHolder;
     }
 
