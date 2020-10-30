@@ -84,13 +84,16 @@ public class ScrollActivity extends AppCompatActivity {
 
 
             final RecyclerView recyclerView = findViewById(R.id.rvNames);
+
             // la recyclerView aura une taille fixe
             recyclerView.setHasFixedSize(true);
+
 
             DrawSortAdapter adapter = new DrawSortAdapter(nameTags);
             recyclerView.setAdapter(adapter);
             // on cree un layout manager pour gerer les layouts
             recyclerView.setLayoutManager(new GridLayoutManager(this, 1));
+
 
 
             fabDelete.setOnClickListener(new View.OnClickListener() {
@@ -209,8 +212,9 @@ public class ScrollActivity extends AppCompatActivity {
         builder.setPositiveButton("Save", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                NameTag n = new NameTag(nameBox.getText().toString());
+                NameTag n = new NameTag(nameBox.getText().toString().toUpperCase().charAt(0) + nameBox.getText().toString().substring(1));
                 nameTags.add(n);
+
                 dialog.dismiss();
             }
         });
