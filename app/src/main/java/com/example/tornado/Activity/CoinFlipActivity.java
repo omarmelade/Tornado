@@ -29,7 +29,7 @@ public class CoinFlipActivity extends AppCompatActivity {
 
         coin = (ImageView) findViewById(R.id.imagepiece);
         btn = (Button) findViewById(R.id.buttonFlip);
-        mySong = MediaPlayer.create(this, R.raw.coin2);
+        mySong = MediaPlayer.create(this, R.raw.coinlaunch);
         // tentative d'augmentation du volume mais ça a pas l'air de marcher de ouf
         float test = 1;
         mySong.setVolume(test, test);
