@@ -7,18 +7,18 @@
     <!-- Move -->
     <!-- On monte l'image -->
 <translate
-    android:duration="850"
+    android:duration="1050"
     android:fillAfter="true"
     android:fromYDelta="0%p"
-    android:toYDelta="-90%p" />
+    android:toYDelta="-85%p" />
 
     <!-- On re descend l'image -->
 <translate
-android:duration="950"
+android:duration="1150"
 android:fillAfter="true"
 android:fromYDelta="0%p"
 android:startOffset="800"
-android:toYDelta="90%p" />
+android:toYDelta="85%p" />
 
 
     </set>

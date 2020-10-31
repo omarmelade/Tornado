@@ -92,7 +92,7 @@ public class CoinAnimateActivity extends AppCompatActivity {
                 tv_coin.setText(s);
                 iv_coin.animate()
                         .rotationXBy(900f)
-                        .setDuration(1100);
+                        .setDuration(1200);
                 tv_coin.animate().setDuration(200).translationZ(20);
                 //tv_coin.setElevation(20);
                 //Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();

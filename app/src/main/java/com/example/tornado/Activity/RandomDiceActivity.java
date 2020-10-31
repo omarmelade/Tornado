@@ -42,7 +42,7 @@ public class RandomDiceActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         int r = randomize(6);
-                        dice_res.setText(String.valueOf(r));
+                        dice_res.setText("C'est un "+String.valueOf(r)+" !");
                         dice_face.setImageResource(r == 1 ? R.drawable.dice_f1 : r == 2 ? R.drawable.dice_f2 : r == 3 ? R.drawable.dice_f3 : r == 4 ? R.drawable.dice_f4 : r == 5 ? R.drawable.dice_f5 : R.drawable.dice_f6 );
 
                     }
