@@ -124,7 +124,6 @@ public class ScrollActivity extends AppCompatActivity {
     private void deleteData(RecyclerView rv) {
         nameTags = new ArrayList<>();
         rv.setAdapter(new DrawSortAdapter(nameTags));
-        saveData();
     }
 
     

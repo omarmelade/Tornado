@@ -7,16 +7,31 @@
     tools:context=".Activity.RandomDiceActivity">
 
     <ImageView
+        android:id="@+id/back_btn_dice"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:contentDescription="@string/back_button"
+        android:elevation="5dp"
+        android:src="@drawable/ic_arrow_left"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/imageFace"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.042"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.347" />
+
+    <ImageView
         android:id="@+id/imageFace"
-        android:layout_width="0dp"
-        android:layout_height="508dp"
+        android:layout_width="353dp"
+        android:layout_height="389dp"
+        android:scaleType="centerInside"
         android:src="@drawable/dice"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.239" />
 
     <Button
         android:id="@+id/randomize_dice"
@@ -29,10 +44,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.462"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.615" />
+        app:layout_constraintTop_toBottomOf="@+id/imageFace"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/dice_result"
@@ -43,8 +58,8 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         app:layout_constraintBottom_toTopOf="@+id/randomize_dice"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.468"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.431" />
+        app:layout_constraintTop_toBottomOf="@+id/imageFace"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

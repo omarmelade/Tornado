@@ -58,6 +58,7 @@ public class DrawSortAdapter extends
         final NameTag nameTag = mNames.get(position);
         final TextView textView = holder.nameTextView;
         textView.setText(nameTag.getmName());
+
         if(!remove){
             setAnimation(holder.itemView, position);
         }

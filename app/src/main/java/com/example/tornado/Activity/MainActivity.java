@@ -6,6 +6,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.tornado.JokeAPIActivity;
 import com.example.tornado.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.game_jokes).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, JokeActivity.class));
+                startActivity(new Intent(MainActivity.this, JokeAPIActivity.class));
             }
         });
 

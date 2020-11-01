@@ -1,8 +1,5 @@
 package com.example.tornado.Activity;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +8,9 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.tornado.R;
 
@@ -24,12 +24,19 @@ public class RandomDiceActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_random_dice);
 
-
+        ImageView back = findViewById(R.id.back_btn_dice);
         final TextView dice_res = (TextView) findViewById(R.id.dice_result);
         final Button btn = (Button) findViewById(R.id.randomize_dice);
         final ImageView dice_face = (ImageView) findViewById(R.id.imageFace);
         final Animation animShake = AnimationUtils.loadAnimation(this, R.anim.shake);
 
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,4 +65,5 @@ public class RandomDiceActivity extends AppCompatActivity {
         int randomnumber = r.nextInt(6);
         return (randomnumber+1);
     }
+
 }

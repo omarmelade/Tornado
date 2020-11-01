@@ -1,6 +1,5 @@
 package com.example.tornado.Activity;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,17 +10,30 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.tornado.R;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
 public class JokeActivity extends AppCompatActivity {
+
+
     private List<String> liste;
     private Button btn;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jokes);
+
+
+        ImageView back = findViewById(R.id.back_btn_joke);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
         btn = (Button) findViewById(R.id.btn_random_joke);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,10 +98,5 @@ public class JokeActivity extends AppCompatActivity {
                joke_res.setText(randomElement);
             }
         });
-
-
-
     }
-
-
 }

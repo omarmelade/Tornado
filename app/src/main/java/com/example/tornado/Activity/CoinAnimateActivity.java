@@ -72,8 +72,6 @@ public class CoinAnimateActivity extends AppCompatActivity {
                 }else{
                     flipCoin(R.drawable.tail, "C'est Pile");
                 }
-
-
             }
         });
     }
@@ -102,9 +100,4 @@ public class CoinAnimateActivity extends AppCompatActivity {
         tv_coin.animate().setDuration(100).translationZ(5);
     }
 
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-    }
 }
