@@ -25,7 +25,7 @@
         android:layout_height="162dp"
         android:fontFamily="@font/carter_one"
         android:gravity="center"
-        android:text="Blagues hilarantes uniquement !"
+        android:text="@string/blagues_hilarantes_uniquement"
         android:textAllCaps="true"
         android:textColor="#FFC107"
         android:textSize="30sp"

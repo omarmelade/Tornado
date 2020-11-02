@@ -110,7 +110,7 @@ public class ScrollActivity extends AppCompatActivity {
                 }
             });
 
-        back_btn = findViewById(R.id.back_btn2);
+        back_btn = findViewById(R.id.back_btn_sound);
         back_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -203,7 +203,7 @@ public class ScrollActivity extends AppCompatActivity {
         LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
         View layout = inflater.inflate(R.layout.dialog_layout, (ViewGroup) findViewById(R.id.layout_root));
         //layout_root should be the name of the "top-level" layout node in the dialog_layout.xml file.
-        final EditText nameBox = (EditText) layout.findViewById(R.id.name_box);
+        final EditText nameBox = layout.findViewById(R.id.name_box);
 
         //Building dialog
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
