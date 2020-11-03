@@ -26,7 +26,7 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
         mySong = MediaPlayer.create(this, R.raw.wind1);
         // met le volume très bas
-        mySong.setVolume(0.08f, 0.08f);
+        mySong.setVolume(0.1f, 0.1f);
 
         mySong.start();
         Thread timer = new Thread() {
