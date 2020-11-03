@@ -29,7 +29,10 @@ public class SoundBoxActivity extends AppCompatActivity {
 
         soundList = new ArrayList<>();
         soundList.add(R.raw.vous_avez_le_droit_de_parler);
-        soundList.add(R.raw.vous_avez_le_droit_de_parler_strong);
+        soundList.add(R.raw.agriculture);
+        soundList.add(R.raw.instable);
+        soundList.add(R.raw.perdu);
+        soundList.add(R.raw.internet);
 
         TextView tv1 = new TextView(this);
         TextView tv2 = new TextView(this);

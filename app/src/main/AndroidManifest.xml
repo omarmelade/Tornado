@@ -19,7 +19,6 @@
             android:theme="@style/AppTheme.Transparent" />
         <activity android:name=".Activity.ScrollActivity" />
         <activity android:name=".Activity.RandomDiceActivity" />
-        <activity android:name=".Activity.CoinFlipActivity" />
         <activity android:name=".Activity.JokeActivity" />
         <activity
             android:name=".Activity.SplashActivity"
