@@ -21,6 +21,8 @@ public class SoundBoxActivity extends AppCompatActivity {
 
 
     private ArrayList<Integer> soundList;
+    private ArrayList<String> soundName;
+
     private MediaPlayer mPlayer = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,11 +30,18 @@ public class SoundBoxActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sound_box);
 
         soundList = new ArrayList<>();
+        soundName = new ArrayList<>();
         soundList.add(R.raw.vous_avez_le_droit_de_parler);
         soundList.add(R.raw.agriculture);
         soundList.add(R.raw.instable);
         soundList.add(R.raw.perdu);
         soundList.add(R.raw.internet);
+        soundName.add("DROIT DE PARLER");
+        soundName.add("AGRICULTURE");
+        soundName.add("INSTABLE");
+        soundName.add("PERDU");
+        soundName.add("INTERNET");
+
 
         TextView tv1 = new TextView(this);
         TextView tv2 = new TextView(this);
@@ -48,7 +57,7 @@ public class SoundBoxActivity extends AppCompatActivity {
         CoordinatorLayout coordinatorLayout = findViewById(R.id.soundbox_view);
         final RecyclerView recyclerView = findViewById(R.id.rv_sound);
 
-        SoundAdapter soundAdapter = new SoundAdapter(soundList, this);
+        SoundAdapter soundAdapter = new SoundAdapter(soundList, soundName, this);
         recyclerView.setAdapter(soundAdapter);
 
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));

@@ -29,10 +29,12 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
         }
     }
 
-   List<Integer> mList;
+   List<Integer> soundList;
+   List<String> nameList;
 
-    public SoundAdapter( List<Integer> list, SoundBoxActivity soundBoxActivity) {
-        mList = list;
+    public SoundAdapter( List<Integer> soundlist, List<String> namelist, SoundBoxActivity soundBoxActivity) {
+        soundList = soundlist;
+        nameList = namelist;
         msoundBoxActivity = soundBoxActivity;
     }
 
@@ -50,14 +52,13 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
             final TextView textView = holder.soundTextView;
-            String i = position + "";
-            textView.setText(i);
+            textView.setText(nameList.get(position));
 
             textView.setOnClickListener(new View.OnClickListener() {
                 @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
                 @Override
                 public void onClick(View v) {
-                    msoundBoxActivity.playSound(mList.get(position));
+                    msoundBoxActivity.playSound(soundList.get(position));
                 }
             });
 
@@ -65,7 +66,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
 
     @Override
     public int getItemCount() {
-        return mList.size();
+        return soundList.size();
     }
 
 

@@ -16,4 +16,5 @@
     <string name="back_button">back button</string>
     <string name="tokenJoke">eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI1ZjllZDNlZTFmY2EyIiwiZXhwIjoiMjAyMC0xMS0wMyAxNjoyNzo0MiIsInRlc3QiOiIrXC89In0.dQ9r-6QaS-z7qN0SREReS6QAWdpG42wFz6o8iQByWjGVHd6Z1rJ_-I9W7GT8y7BRMeB2zjiMi3fmmoIkFl0U5g</string>
     <string name="blagues_hilarantes_uniquement">Blagues hilarantes uniquement !</string>
+    <string name="soundbox">SOUNDBOX</string>
 </resources>
