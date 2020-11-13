@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.SoundBoxActivity" />
+        <activity android:name=".Util.SampleActivity" />
         <activity android:name=".Activity.CoinAnimateActivity" />
         <activity android:name=".Activity.JokeAPIActivity" />
         <activity

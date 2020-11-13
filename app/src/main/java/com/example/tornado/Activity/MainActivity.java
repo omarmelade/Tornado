@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.tornado.R;
+import com.example.tornado.Util.SampleActivity;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -47,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                             logo.setClickable(true);
                         }
                     }, 500);
-                    startActivity(new Intent(MainActivity.this, SoundBoxActivity.class));
+                    startActivity(new Intent(MainActivity.this, SampleActivity.class));
                     if(counter > secret){
                         Toast.makeText(MainActivity.this, "Vous avez déjà découvert ce secret, n'hésitez pas à en chercher d'autres.", Toast.LENGTH_SHORT).show();
                     }

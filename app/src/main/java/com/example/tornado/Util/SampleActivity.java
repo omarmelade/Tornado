@@ -1,4 +1,4 @@
-package com.example.tornado.Activity;
+package com.example.tornado.Util;
 
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -16,7 +16,7 @@ import com.example.tornado.R;
 
 import java.util.ArrayList;
 
-public class SoundBoxActivity extends AppCompatActivity {
+public class SampleActivity extends AppCompatActivity {
 
 
 
@@ -27,7 +27,7 @@ public class SoundBoxActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sound_box);
+        setContentView(R.layout.activity_sample);
 
         soundList = new ArrayList<>();
         soundName = new ArrayList<>();

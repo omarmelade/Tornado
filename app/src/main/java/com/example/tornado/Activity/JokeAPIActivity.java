@@ -100,6 +100,7 @@ public class JokeAPIActivity extends AppCompatActivity {
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String>  params = new HashMap<>();
                 params.put("Authorization: Bearer", getResources().getString(R.string.tokenJoke));
+                //params.put("Authorization", getResources().getString(R.string.tokenVDM));
 
                 return params;
             }

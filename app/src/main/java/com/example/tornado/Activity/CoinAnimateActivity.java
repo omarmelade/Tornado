@@ -39,8 +39,6 @@ public class CoinAnimateActivity extends AppCompatActivity {
         back_btn = findViewById(R.id.back_btn);
 
 
-
-
         onCoinTap();
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,8 +46,6 @@ public class CoinAnimateActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
-
-
 
     }
 
