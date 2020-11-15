@@ -43,18 +43,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        ImageView dot = findViewById(R.id.dot);
-        dot.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                if(counterDot  < secret2){
-                    String s = "Que vas-t-il se passer dans " + (secret2 - counterDot) + ".";
-                    ToastUtil.showToast(getApplicationContext(), s, Toast.LENGTH_SHORT);
-                }
-                counterDot++;
-            }
-        });
 
         findViewById(R.id.game_dice).setOnClickListener(new View.OnClickListener() {
             @Override

@@ -62,7 +62,7 @@
         android:layout_height="170dp"
         android:fontFamily="sans-serif-condensed"
         android:gravity="center"
-        android:text="Clique sur le jolie boutton juste en dessous pour avoir une blague qualitative aléatoire !"
+        android:text="Clique sur le joli boutton juste en dessous pour avoir une blague qualitative aléatoire !"
         android:textAlignment="center"
         android:textColor="#070707"
         android:textSize="18sp"

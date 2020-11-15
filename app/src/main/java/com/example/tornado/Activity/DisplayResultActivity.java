@@ -21,15 +21,15 @@ public class DisplayResultActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_display_result);
 
-        Intent intent = this.getIntent();   //get the intent to recieve the x and y coords, that you passed before
+        Intent intent = this.getIntent();   //get l'intent des coordonnées x et y, qui ont été passées avant
 
-        LinearLayout rootLayout = findViewById(R.id.root_layout); //there you have to get the root layout of your second activity
+        LinearLayout rootLayout = findViewById(R.id.root_layout); //get le root layout de la seconde activity
         TextView tv = findViewById(R.id.tv_result);
         String str;
 
         if (intent.hasExtra("winner")){ // vérifie qu'une valeur est associée à la clé winner
             str = intent.getStringExtra("winner"); // on récupère la valeur associée à la clé
-            tv.setText(str);    // on l'affiche dans le nouvelle ecran
+            tv.setText(str);    // on l'affiche dans le nouvel ecran
         }
         mRevealAnimation = new RevealAnimation(rootLayout, intent, this);
     }

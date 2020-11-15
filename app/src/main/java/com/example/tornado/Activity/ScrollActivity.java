@@ -22,6 +22,7 @@ import com.example.tornado.Behavior.RevealAnimation;
 import com.example.tornado.Behavior.ViewAnimation;
 import com.example.tornado.Model.NameTag;
 import com.example.tornado.R;
+import com.example.tornado.Util.ToastUtil;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -67,9 +68,11 @@ public class ScrollActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     System.out.println(nameTags.size());
                     if(nameTags.size() == 0) {
-                        Toast t = new Toast(getApplicationContext());
-                        t.setText("Vous n'avez pas inscrit de nom.");
-                        t.show();
+                       // Toast s = new Toast(getApplicationContext());
+                        //t.setText("Vous n'avez pas inscrit de nom.");
+                       // t.show();
+                        String s = " Il faut d'abord rajouter des noms ! ";
+                        ToastUtil.showToast(getApplicationContext(), s, Toast.LENGTH_SHORT);
                     }else{
                         startRevealActivity(v);
                     }
