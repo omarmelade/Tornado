@@ -13,9 +13,9 @@ import com.example.tornado.R;
 
 public class SplashActivity extends AppCompatActivity {
 
-    ImageView iv_logo;
-    TextView tv_logo;
-    MediaPlayer mySong;
+    private ImageView iv_logo;
+    private TextView tv_logo;
+    private MediaPlayer mySong;
 
     private Handler mHandler;
     private Runnable mRunnable;
@@ -42,12 +42,12 @@ public class SplashActivity extends AppCompatActivity {
 
             }
         };
-            mRunnable = new Runnable() {
-                    @Override
-                    public void run() {
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                    }
-                };
+        mRunnable = new Runnable() {
+                @Override
+                public void run() {
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                }
+            };
 
             mHandler = new Handler();
             mHandler.postDelayed(mRunnable, 2500);

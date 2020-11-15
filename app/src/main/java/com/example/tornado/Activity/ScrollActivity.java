@@ -124,8 +124,16 @@ public class ScrollActivity extends AppCompatActivity {
     private void deleteData(RecyclerView rv) {
         nameTags = new ArrayList<>();
         rv.setAdapter(new DrawSortAdapter(nameTags));
+
+        clearSharedPref();
     }
 
+    public void clearSharedPref(){
+        SharedPreferences sharedPreferences = getSharedPreferences("shared preferences", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.clear();
+        editor.apply();
+    }
     
     // methode qui sauvegarde au moment ou l'on appuie sur save
     private void saveData() {
@@ -150,8 +158,9 @@ public class ScrollActivity extends AppCompatActivity {
         }
     }
 
+    Random r = new Random();
+
     private String winner(){
-        Random r = new Random();
         int nb = r.nextInt(nameTags.size());
         NameTag n = nameTags.get(nb);
         return  n.getmName();
@@ -168,7 +177,7 @@ public class ScrollActivity extends AppCompatActivity {
         intent.putExtra("winner", winner());
         intent.putExtra(RevealAnimation.EXTRA_CIRCULAR_REVEAL_X, revealX);
         intent.putExtra(RevealAnimation.EXTRA_CIRCULAR_REVEAL_Y, revealY);
-        System.out.println(winner());
+        //System.out.println(winner());
         //just start the activity as an shared transition, but set the options bundle to null
         ActivityCompat.startActivity(this, intent, null);
 

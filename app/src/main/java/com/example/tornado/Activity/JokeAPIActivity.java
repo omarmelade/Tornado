@@ -84,24 +84,23 @@ public class JokeAPIActivity extends AppCompatActivity {
                     String content = jsonObject.getString("content");
 
                     mTextViewRes.setText(content);
-                    System.out.println(response.toString());
+                    //System.out.println(response.toString());
                 } catch (JSONException e) {
-                    System.out.println(e);
                     e.printStackTrace();
                 }
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                System.out.println(error);
                 error.printStackTrace();
             }
         }
         ) {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
-                Map<String, String>  params = new HashMap<String, String>();
+                Map<String, String>  params = new HashMap<>();
                 params.put("Authorization: Bearer", getResources().getString(R.string.tokenJoke));
+                //params.put("Authorization", getResources().getString(R.string.tokenVDM));
 
                 return params;
             }

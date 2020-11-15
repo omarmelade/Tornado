@@ -11,14 +11,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.tornado.Activity.SoundBoxActivity;
 import com.example.tornado.R;
+import com.example.tornado.Util.SampleActivity;
 
 import java.util.List;
 
 public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> {
 
-    SoundBoxActivity msoundBoxActivity;
+    SampleActivity msoundBoxActivity;
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView soundTextView;
@@ -32,10 +32,10 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
    List<Integer> soundList;
    List<String> nameList;
 
-    public SoundAdapter( List<Integer> soundlist, List<String> namelist, SoundBoxActivity soundBoxActivity) {
+    public SoundAdapter( List<Integer> soundlist, List<String> namelist, SampleActivity sampleActivity) {
         soundList = soundlist;
         nameList = namelist;
-        msoundBoxActivity = soundBoxActivity;
+        msoundBoxActivity = sampleActivity;
     }
 
     @NonNull
