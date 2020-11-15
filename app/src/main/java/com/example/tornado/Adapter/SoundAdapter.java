@@ -2,6 +2,8 @@ package com.example.tornado.Adapter;
 
 import android.content.Context;
 import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,7 +46,7 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
 
-        View soundView = inflater.inflate(R.layout.item_sound, parent, false);
+            View soundView = inflater.inflate(R.layout.item_sound, parent, false);
 
         return new ViewHolder(soundView);
     }
@@ -58,9 +60,20 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder> 
                 @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
                 @Override
                 public void onClick(View v) {
+                    textView.animate().setDuration(200).translationZ(0);
+                    // cree un handler basé sur la boucle de temps
+                    Handler h = new Handler(Looper.getMainLooper());
+                    h.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            textView.animate().setDuration(100).translationZ(20);
+                        }
+                    }, 500);
                     msoundBoxActivity.playSound(soundList.get(position));
                 }
             });
+
+
 
     }
 

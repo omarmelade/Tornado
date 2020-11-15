@@ -3,8 +3,6 @@ package com.example.tornado.Util;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
@@ -43,11 +41,7 @@ public class SampleActivity extends AppCompatActivity {
         soundName.add("INTERNET");
 
 
-        TextView tv1 = new TextView(this);
-        TextView tv2 = new TextView(this);
-        ImageView back = findViewById(R.id.back_btn_sound);
-
-        back.setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.back_btn_sound).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
@@ -61,21 +55,6 @@ public class SampleActivity extends AppCompatActivity {
         recyclerView.setAdapter(soundAdapter);
 
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
-        coordinatorLayout.addView(tv1);
-        tv1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                playSound(R.raw.coinlaunch);
-            }
-        });
-
-        tv2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                playSound(R.raw.wind1);
-            }
-        });
-
 
     }
 
@@ -97,4 +76,11 @@ public class SampleActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mPlayer != null) {
+            mPlayer.release();
+        }
+    }
 }

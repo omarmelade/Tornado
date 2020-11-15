@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -45,6 +46,7 @@ public class ScrollActivity extends AppCompatActivity {
 
         loadData();
 
+
             fab = findViewById(R.id.fab_main);
             // on defini les petits bouttons du FAB
             fabEdit = findViewById(R.id.fabEdit);
@@ -63,11 +65,23 @@ public class ScrollActivity extends AppCompatActivity {
             fabSort.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    startRevealActivity(v);
+                    System.out.println(nameTags.size());
+                    if(nameTags.size() == 0) {
+                        Toast t = new Toast(getApplicationContext());
+                        t.setText("Vous n'avez pas inscrit de nom.");
+                        t.show();
+                    }else{
+                        startRevealActivity(v);
+                    }
                 }
             });
 
+            findViewById(R.id.mode).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
+                }
+            });
 
             // affiche le FAB Menu
             fab.setOnClickListener(new View.OnClickListener() {

@@ -57,6 +57,7 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        mySong.release();
         if(mHandler != null && mRunnable != null)
             mHandler.removeCallbacks(mRunnable);
     }
