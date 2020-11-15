@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.tornado.R;
 import com.example.tornado.Util.SampleActivity;
+import com.example.tornado.Util.ToastUtil;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -19,9 +20,10 @@ import java.lang.reflect.Type;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageView logo;
+    ImageView t;
     private int counter = 0;
-    private int secret;
+    private int counterDot = 0;
+    private int secret, secret2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,31 +31,28 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         loadData();
         secret = 5;
-        logo = findViewById(R.id.torna);
-        logo.setClickable(true);
+        secret2 = 3;
+        t = findViewById(R.id.torna);
+        t.setClickable(true);
 
-        logo.setOnClickListener(new View.OnClickListener() {
+        t.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(counter > 2 && counter < secret){
-                    Toast.makeText(MainActivity.this, "Appuyer encore " + (secret - counter) + " pour decouvrir un secret", Toast.LENGTH_SHORT).show();
+                // test et affiche dans la console (-_-)
+                runSample();
+            }
+        });
+
+        ImageView dot = findViewById(R.id.dot);
+        dot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(counterDot  < secret2){
+                    String s = "Que vas-t-il se passer dans " + (secret2 - counterDot) + ".";
+                    ToastUtil.showToast(getApplicationContext(), s, Toast.LENGTH_SHORT);
                 }
-                if(counter >= secret){
-                    saveData();
-                    logo.setClickable(false);
-                    // empeche l'utilisateur de spammer le boutton
-                    Handler handler = new Handler();
-                    handler.postDelayed(new Runnable() {
-                        public void run() {
-                            logo.setClickable(true);
-                        }
-                    }, 500);
-                    startActivity(new Intent(MainActivity.this, SampleActivity.class));
-                    if(counter > secret){
-                        Toast.makeText(MainActivity.this, "Vous avez déjà découvert ce secret, n'hésitez pas à en chercher d'autres.", Toast.LENGTH_SHORT).show();
-                    }
-                }
-                counter++;
+                counterDot++;
             }
         });
 
@@ -91,6 +90,28 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void runSample(){
+        if(counter > 2 && counter < secret){
+            ToastUtil.showToast(getApplicationContext(), "Appuyer encore " + (secret - counter) + " pour decouvrir un secret", Toast.LENGTH_SHORT);
+        }
+        if(counter >= secret){
+            saveData();
+            t.setClickable(false);
+            // empeche l'utilisateur de spammer le boutton
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                public void run() {
+                    t.setClickable(true);
+                }
+            }, 500);
+            startActivity(new Intent(MainActivity.this, SampleActivity.class));
+            if(counter > secret){
+                ToastUtil.showToast(getApplicationContext(), "Vous avez déjà découvert ce secret, n'hésitez pas à en chercher d'autres.", Toast.LENGTH_SHORT);
+            }
+        }
+        counter++;
+    }
+
     public void goStopClick(final int btn){
         findViewById(btn).setClickable(false);
         // empeche l'utilisateur de spammer le boutton
@@ -121,4 +142,6 @@ public class MainActivity extends AppCompatActivity {
         Type type = new TypeToken<Integer>() {}.getType();
         counter = gson.fromJson(json, type);
     }
+
+
 }

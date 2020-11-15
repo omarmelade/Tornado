@@ -26,6 +26,7 @@ public class CoinAnimateActivity extends AppCompatActivity {
     TextView tv_coin;
     MediaPlayer mySound;
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,8 +39,8 @@ public class CoinAnimateActivity extends AppCompatActivity {
         tv_coin = findViewById(R.id.tv_coin);
         back_btn = findViewById(R.id.back_btn);
 
-
-        onCoinTap();
+        iv_coin.setOnClickListener(v);
+        tv_coin.setOnClickListener(v);
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,28 +50,27 @@ public class CoinAnimateActivity extends AppCompatActivity {
 
     }
 
-    private void onCoinTap(){
-        final Animation animUpDown;
-        // load the animation
-        animUpDown = AnimationUtils.loadAnimation(getApplicationContext(),
-                R.anim.up_down);
-        iv_coin.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-            @Override
-            public void onClick(View v) {
-                // fixe le spam clique sur la piece.
-                iv_coin.setRotationX(0f);
-                int icon = r.nextFloat() < 0.50f ? 0 :1;
-                mySound.start();
-                iv_coin.startAnimation(animUpDown);
-                if(icon == 1){
-                    flipCoin(R.drawable.head, "C'est Face");
-                }else{
-                    flipCoin(R.drawable.tail, "C'est Pile");
-                }
+    // instance d'un listener a reutiliser
+    View.OnClickListener v = new View.OnClickListener() {
+        @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+        @Override
+        public void onClick(View v) {
+            final Animation animUpDown;
+            // load the animation
+            animUpDown = AnimationUtils.loadAnimation(getApplicationContext(),
+                    R.anim.up_down);
+            // fixe le spam clique sur la piece.
+            iv_coin.setRotationX(0f);
+            int icon = r.nextFloat() < 0.50f ? 0 :1;
+            mySound.start();
+            iv_coin.startAnimation(animUpDown);
+            if(icon == 1){
+                flipCoin(R.drawable.head, "C'est Face");
+            }else{
+                flipCoin(R.drawable.tail, "C'est Pile");
             }
-        });
-    }
+        }
+    };
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void flipCoin(final Integer icon, final String s){
@@ -95,5 +95,6 @@ public class CoinAnimateActivity extends AppCompatActivity {
 
         tv_coin.animate().setDuration(100).translationZ(5);
     }
+
 
 }
